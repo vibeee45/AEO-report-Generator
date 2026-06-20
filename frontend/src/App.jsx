@@ -111,17 +111,17 @@ export default function AEOAudit() {
     setPhase("loading");
 
     const response = await fetch(
-      "http://localhost:8000/generate-pdf-report",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          website: url,
-        }),
-      }
-    );
+  "https://aeo-report-generator-3.onrender.com/generate-pdf-report",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      website: url,
+    }),
+  }
+);
 
     if (!response.ok) {
       throw new Error("Failed to generate report");
