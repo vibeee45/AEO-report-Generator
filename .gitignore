@@ -1,0 +1,27 @@
+# Python
+venv/
+backend/venv/
+__pycache__/
+*.pyc
+
+# Environment Variables
+.env
+.env.*
+
+# Node.js
+node_modules/
+
+# Build Files
+dist/
+build/
+
+# VS Code
+.vscode/
+tempCodeRunnerFile.py
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

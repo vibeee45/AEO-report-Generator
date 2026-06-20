@@ -1,0 +1,121 @@
+annotated-doc==0.0.4
+annotated-types==0.7.0
+anyio==4.12.1
+beautifulsoup4==4.15.0
+certifi==2026.5.20
+cffi==2.0.0
+charset-normalizer==3.4.7
+click==8.1.8
+colorama==0.4.6
+cryptography==48.0.1
+exceptiongroup==1.3.1
+fastapi==0.128.8
+google-ai-generativelanguage==0.6.15
+google-api-core==2.30.3
+google-api-python-client==2.197.0
+google-auth==2.50.0
+google-auth-httplib2==0.3.1
+google-generativeai==0.8.6
+googleapis-common-protos==1.75.0
+grpcio==1.80.0
+grpcio-status==1.71.2
+h11==0.16.0
+httplib2==0.31.2
+idna==3.18
+lxml==6.1.1
+pillow==11.3.0
+proto-plus==1.27.2
+protobuf==5.29.6
+pyasn1==0.6.3
+pyasn1_modules==0.4.2
+pycparser==2.23
+pydantic==2.13.4
+pydantic_core==2.46.4
+pyparsing==3.3.2
+python-dotenv==1.2.1
+reportlab==4.5.1
+requests==2.32.5
+soupsieve==2.8.4
+starlette==0.49.3
+tqdm==4.68.2
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+uritemplate==4.2.0
+urllib3==2.6.3
+uvicorn==0.39.0
+(venv) PS C:\Users\91958\AEO-Report-Generator\backend> git add requirements.txt
+(venv) PS C:\Users\91958\AEO-Report-Generator\backend> git commit -m "Add requirements file"
+[main 99302d2] Add requirements file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+(venv) PS C:\Users\91958\AEO-Report-Generator\backend> type main.py
+from fastapi import FastAPI
+from app.api.report import router
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI(
+    title="AEO Report Generator"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Development
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(router)
+
+
+@app.get("/")
+def home():
+    return {
+        "status": "running",
+        "message": "AEO Report Generator API"
+    }
+(venv) PS C:\Users\91958\AEO-Report-Generator\backend> type requirements.txt
+annotated-doc==0.0.4
+annotated-types==0.7.0
+anyio==4.12.1
+beautifulsoup4==4.15.0
+certifi==2026.5.20
+cffi==2.0.0
+charset-normalizer==3.4.7
+click==8.1.8
+colorama==0.4.6
+cryptography==48.0.1
+exceptiongroup==1.3.1
+fastapi==0.128.8
+google-ai-generativelanguage==0.6.15
+google-api-core==2.30.3
+google-api-python-client==2.197.0
+google-auth==2.50.0
+google-auth-httplib2==0.3.1
+google-generativeai==0.8.6
+googleapis-common-protos==1.75.0
+grpcio==1.80.0
+grpcio-status==1.71.2
+h11==0.16.0
+httplib2==0.31.2
+idna==3.18
+lxml==6.1.1
+pillow==11.3.0
+proto-plus==1.27.2
+protobuf==5.29.6
+pyasn1==0.6.3
+pyasn1_modules==0.4.2
+pycparser==2.23
+pydantic==2.13.4
+pydantic_core==2.46.4
+pyparsing==3.3.2
+python-dotenv==1.2.1
+reportlab==4.5.1
+requests==2.32.5
+soupsieve==2.8.4
+starlette==0.49.3
+tqdm==4.68.2
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+uritemplate==4.2.0
+urllib3==2.6.3
+uvicorn==0.39.0
