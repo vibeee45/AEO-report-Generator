@@ -109,8 +109,7 @@ export default function AEOAudit() {
 
   try {
     setPhase("loading");
-
-    const response = await fetch(
+  const response = await fetch(
   "https://aeo-report-generator-3.onrender.com/generate-pdf-report",
   {
     method: "POST",
